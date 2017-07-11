@@ -1,0 +1,72 @@
+A Deep Dive into Golang
+July 02, 2017
+
+Geet Kumar, HERE
+geet.kumar@here.com
+@go_apollo
+
+* Why Go?
+
+- Go is a free and open source language created at Google by Robert Griesemer, Rob Pike, and Ken Thompson
+- Be statically typed
+- Should not include too many mandatory keywords and repetition (ie Java's private, public)
+- Straightforward approach to concurrency management
+- All three designers expressed dislike with regards to C++, and therefore designed Go
+
+* Golang Basics
+
+* Static Typing
+
+Golang is known for being a statically typed language, but...
+.play -numbers -edit demos/basics.go
+
+* Different declarative syntax?
+
+- int aFunc(int x, int y)
+- func aFunc(x, y int) int
+
+- int (*aFunc)(int (*)(int, int), int)
+- func aFunc(func (int, int) int, int) int
+
+: I agree this seems like a suttle difference but let's look at a more complicated example.
+
+* Tools
+
+gofmt - There is only one standard way to format go code. Strict but necessary...
+godoc - View method definitions
+delve - Opensource go debugger
+
+: delve is a relatively new debugging tool available for go. Before, the only tool available was gcc
+
+* OO Features - Interfaces & Composition
+
+* The bigger the interface, the weaker the abstraction
+
+.code -numbers -edit demos/interfaces/interfaces.go /START WRITER/,/END WRITER/
+
+: explain method calls using godoc
+
+* 
+.code -numbers -edit demos/interfaces/interfaces.go /START RANDOM GENERATOR/,/END RANDOM GENERATOR/
+
+* 
+.code -numbers -edit demos/interfaces/interfaces.go /START SEQUENCE GENERATOR/,/END SEQUENCE GENERATOR/
+
+* 
+.code -numbers -edit demos/interfaces/interfaces.go /START RUN/,/END RUN/
+
+* 
+.play -numbers -edit demos/interfaces/interfaces.go /START MAIN/,/END MAIN/
+
+: question regarding seed values
+
+* Concurrency
+
+* Handling Errors
+
+: Explain go's approach to handling errors immediately
+: Show error interface by displaying source code for errors.New()
+
+
+
+  
