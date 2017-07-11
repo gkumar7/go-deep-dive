@@ -31,6 +31,17 @@ Golang is known for being a statically typed language, but...
 : I agree this seems like a suttle difference but let's look at a more complicated example.
 : Discuss regarding features of language people would like to see (raise of hands?), switch cases, etc
 
+* Type Aliases
+
+.play -numbers -edit demos/aliases/aliases.go
+
+: Very useful, allows you to specify methods for builtin types
+
+* Handling Errors
+
+: Explain go's approach to handling errors immediately
+: Show error interface by displaying source code for errors.New()
+
 * Tools
 
 gofmt - There is only one standard way to format go code. Strict but necessary...
@@ -46,6 +57,7 @@ delve - Opensource go debugger
 .code -numbers -edit demos/interfaces/interfaces.go /START WRITER/,/END WRITER/
 
 : explain method calls using godoc
+: interfaces do not need a distinct keyword, this decouples the interface from the implementation
 
 * 
 .code -numbers -edit demos/interfaces/interfaces.go /START RANDOM GENERATOR/,/END RANDOM GENERATOR/
@@ -63,11 +75,11 @@ delve - Opensource go debugger
 
 * Concurrency
 
-* Handling Errors
+* 
+.code -numbers -edit demos/race/race.go /START DEF/,/END DEF/
 
-: Explain go's approach to handling errors immediately
-: Show error interface by displaying source code for errors.New()
+* 
+.play -numbers -edit demos/race/race.go /START MAIN/,/END MAIN/
 
-
-
-  
+: nifty race detector, open issue for deadlock detector
+: remove sync.Mutex and run with -race flag on machine
