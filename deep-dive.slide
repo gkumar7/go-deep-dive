@@ -29,6 +29,7 @@ Golang is known for being a statically typed language, but...
 - func aFunc(func (int, int) int, int) int
 
 : I agree this seems like a suttle difference but let's look at a more complicated example.
+: Discuss regarding features of language people would like to see (raise of hands?), switch cases, etc
 
 * Tools
 
