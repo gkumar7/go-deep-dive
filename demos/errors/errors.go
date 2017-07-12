@@ -1,14 +1,22 @@
 package main
 
-import (
-	"log"
-	"os"
-)
+import "log"
+
+type MischeviousGopher struct {
+	name string
+}
+
+func (m MischeviousGopher) Error() string {
+	return m.name
+}
+
+func ReturnsError() error {
+	return MischeviousGopher{name: "George"}
+}
 
 func main() {
-	filename := "/tmp/test"
-	_, err := os.Open(filename)
+	err := ReturnsError()
 	if err != nil {
-		log.Fatalf("Unable to open file %s: %v", filename, err)
+		log.Fatal(err)
 	}
 }

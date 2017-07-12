@@ -120,6 +120,7 @@ func main() {
 	runCmd(fmt.Sprintf("rm %s", outputFileName))
 
 	for i := 0; i < 10; i++ {
+		rand.Seed(time.Now().UTC().UnixNano())
 		randomGenerator := rand.Intn(2)
 		generateAndWrite(generators[randomGenerator], 10)
 	}
